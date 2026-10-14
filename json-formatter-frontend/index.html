@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>JSON Fixer</title>
+  <meta name="description" content="Paste broken JSON and get clean, valid, formatted JSON back.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <div class="brand"><span class="logo">{ }</span> JSON Fixer</div>
+    <button id="theme" class="ghost" aria-label="Toggle theme">◐</button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Fix broken JSON in one click</h1>
+      <p>Trailing commas, unquoted keys, single quotes — paste it in and get valid, pretty JSON back.</p>
+    </section>
+
+    <div class="toolbar">
+      <button id="format" class="primary">Fix &amp; Format <kbd>Ctrl</kbd>+<kbd>Enter</kbd></button>
+      <button id="sample" class="ghost">Load sample</button>
+      <button id="clear" class="ghost">Clear</button>
+      <span id="status" role="status" aria-live="polite"></span>
+    </div>
+
+    <div class="panes">
+      <section class="pane">
+        <div class="pane-head"><label for="input">Broken JSON</label><span id="inCount" class="muted"></span></div>
+        <textarea id="input" spellcheck="false" placeholder='{name: "Ada", "tags": ["a", "b",],}'></textarea>
+      </section>
+
+      <section class="pane">
+        <div class="pane-head">
+          <label for="output">Fixed JSON</label>
+          <div class="actions">
+            <button id="copy" class="ghost small" disabled>Copy</button>
+            <button id="download" class="ghost small" disabled>Download</button>
+          </div>
+        </div>
+        <textarea id="output" spellcheck="false" readonly placeholder="Result appears here"></textarea>
+      </section>
+    </div>
+  </main>
+
+  <footer>Powered by the <a href="https://softwares-u80c.onrender.com/format">formatter API</a> · urbantrends.dev</footer>
+  <script src="app.js"></script>
+</body>
+</html>
